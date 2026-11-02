@@ -1,0 +1,7 @@
+{
+  "source": "https://life.bsc.es/pid/skempi2/database/download/skempi_v2.csv",
+  "sha256": "76f8e60d09eaa4f05fb265063886859a86895c0b2fb225e31fe82928a883972d",
+  "retrieved_utc": "2026-11-02T04:38:14.958550+00:00",
+  "license": "CC BY 4.0; https://life.bsc.es/pid/skempi2/info/terms",
+  "citation": "Jankauskaite et al. (2019). SKEMPI 2.0. Bioinformatics 35, 462-469. doi:10.1093/bioinformatics/bty635"
+}

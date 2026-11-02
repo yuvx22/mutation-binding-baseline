@@ -1,0 +1,576 @@
+{
+  "dataset_sha256": "76f8e60d09eaa4f05fb265063886859a86895c0b2fb225e31fe82928a883972d",
+  "split_manifest": "splits/split_manifest_v1.json",
+  "split_manifest_version": 1,
+  "split_fingerprint": "7b97e6bc022bbc9ceab7efc10cbe8450db838b8a0474303610ceea3d90868887",
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0"
+  },
+  "audit": {
+    "raw_rows": 7085,
+    "exclusions_sequential": {
+      "not_single_standard_amino_acid_substitution": 1973,
+      "missing_censored_or_nonpositive_affinity": 283,
+      "missing_assumed_or_invalid_temperature": 1493,
+      "nonfinite_target": 0
+    },
+    "retained_measurements": 3336,
+    "unique_complex_mutations": 2861,
+    "repeated_measurements_collapsed": 475,
+    "pdb_groups": 230,
+    "related_groups": 60,
+    "largest_related_group_rows": 1323
+  },
+  "features": [
+    "wt_aa",
+    "mut_aa",
+    "location"
+  ],
+  "target": "RT ln(Kd_mut / Kd_wt), kcal/mol; positive means weaker binding",
+  "primary_evaluation": "related_group",
+  "experiments": {
+    "pdb_group": {
+      "grouping": "pdb_group",
+      "n_folds": 5,
+      "pooled_out_of_fold": {
+        "zero_change": {
+          "mae_kcal_mol": 1.3814286290634419,
+          "rmse_kcal_mol": 2.13417412701881
+        },
+        "training_median": {
+          "mae_kcal_mol": 1.2600484115996213,
+          "rmse_kcal_mol": 1.9477325705520043
+        },
+        "ridge_mutation_location": {
+          "mae_kcal_mol": 1.1519149113215361,
+          "rmse_kcal_mol": 1.7256563510808531
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "train_rows": 2288,
+          "test_rows": 573,
+          "test_groups": [
+            "1CT2",
+            "1DVF",
+            "1FCC",
+            "1FR2",
+            "1GUA",
+            "1JTG",
+            "1KBH",
+            "1KIQ",
+            "1LFD",
+            "1MAH",
+            "1MI5",
+            "1NMB",
+            "1QSE",
+            "1SGP",
+            "1UUZ",
+            "1XGT",
+            "1Y1K",
+            "1Y3D",
+            "2AK4",
+            "2B0Z",
+            "2B42",
+            "2GYK",
+            "2HLE",
+            "2J0T",
+            "2NU2",
+            "2NYY",
+            "2PCC",
+            "2VLN",
+            "3B4V",
+            "3BT1",
+            "3BTD",
+            "3BTM",
+            "3D5S",
+            "3G6D",
+            "3N4I",
+            "3QFJ",
+            "3QIB",
+            "4BFI",
+            "4E6K",
+            "4FTV",
+            "4JFD",
+            "4MYW",
+            "4WND",
+            "4YH7",
+            "5E6P",
+            "5M2O"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 0.943242927791306,
+              "rmse_kcal_mol": 1.573153288251107
+            },
+            "training_median": {
+              "mae_kcal_mol": 0.9166097214889527,
+              "rmse_kcal_mol": 1.4580725703117274
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 0.9198411180967206,
+              "rmse_kcal_mol": 1.4015503208127547
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "train_rows": 2289,
+          "test_rows": 572,
+          "test_groups": [
+            "1A4Y",
+            "1AO7",
+            "1B2S",
+            "1CHO",
+            "1E96",
+            "1FY8",
+            "1GL0",
+            "1KIR",
+            "1KTZ",
+            "1MLC",
+            "1N8Z",
+            "1S0W",
+            "1SBB",
+            "1SGQ",
+            "1XGU",
+            "1Y33",
+            "1Y48",
+            "2B0U",
+            "2B10",
+            "2BNR",
+            "2C0L",
+            "2I26",
+            "2J12",
+            "2NU4",
+            "2NZ9",
+            "2SIC",
+            "2VLO",
+            "3BTE",
+            "3BTQ",
+            "3EG5",
+            "3NCB",
+            "3NGB",
+            "3NVN",
+            "3QDJ",
+            "3R9A",
+            "3RF3",
+            "3SEK",
+            "4HFK",
+            "4HRN",
+            "4JEU",
+            "4JFE",
+            "4NM8",
+            "4PWX",
+            "4Y61",
+            "5K39"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.4018369481122281,
+              "rmse_kcal_mol": 2.0695381027989823
+            },
+            "training_median": {
+              "mae_kcal_mol": 1.2827645879534808,
+              "rmse_kcal_mol": 1.8693384770923636
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.178581296169285,
+              "rmse_kcal_mol": 1.6315009498732733
+            }
+          }
+        },
+        {
+          "fold": 2,
+          "train_rows": 2289,
+          "test_rows": 572,
+          "test_groups": [
+            "1ACB",
+            "1B2U",
+            "1DAN",
+            "1FFW",
+            "1GCQ",
+            "1GL1",
+            "1H9D",
+            "1JRH",
+            "1JTD",
+            "1K8R",
+            "1KAC",
+            "1LP9",
+            "1R0R",
+            "1SGD",
+            "1SGY",
+            "1SMF",
+            "1VFB",
+            "1XD3",
+            "1XGP",
+            "1Y34",
+            "1YCS",
+            "1YY9",
+            "2B11",
+            "2DSQ",
+            "2HRK",
+            "2J8U",
+            "2OOB",
+            "2SGP",
+            "2VLP",
+            "3BTF",
+            "3BTT",
+            "3F1S",
+            "3L5X",
+            "3MZG",
+            "3NCC",
+            "3NVQ",
+            "3SE8",
+            "3SE9",
+            "3SF4",
+            "3TGK",
+            "4CVW",
+            "4JFF",
+            "4JGH",
+            "4N8V",
+            "4RS1",
+            "4ZS6"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.3851704495909498,
+              "rmse_kcal_mol": 2.0992403212074136
+            },
+            "training_median": {
+              "mae_kcal_mol": 1.255475777392218,
+              "rmse_kcal_mol": 1.9125588433511707
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.1724882470196687,
+              "rmse_kcal_mol": 1.673959984741512
+            }
+          }
+        },
+        {
+          "fold": 3,
+          "train_rows": 2289,
+          "test_rows": 572,
+          "test_groups": [
+            "1B3S",
+            "1BD2",
+            "1BRS",
+            "1CSE",
+            "1CSO",
+            "1CT4",
+            "1EMV",
+            "1FC2",
+            "1HE8",
+            "1IAR",
+            "1JCK",
+            "1KNE",
+            "1P69",
+            "1S1Q",
+            "1SGE",
+            "1TM1",
+            "1U7F",
+            "1WQJ",
+            "1X1W",
+            "1XGQ",
+            "1Y3B",
+            "1YQV",
+            "1Z7X",
+            "2B12",
+            "2BDN",
+            "2J1K",
+            "2NU0",
+            "2REX",
+            "2SGQ",
+            "2VLQ",
+            "2WPT",
+            "3BTG",
+            "3BTW",
+            "3D3V",
+            "3HFM",
+            "3HH2",
+            "3N06",
+            "3PWP",
+            "3SGB",
+            "3U82",
+            "3UIG",
+            "4G0N",
+            "4G2V",
+            "4KRL",
+            "4NKQ",
+            "4YFD",
+            "5TAR"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.5693678745893145,
+              "rmse_kcal_mol": 2.256731708036181
+            },
+            "training_median": {
+              "mae_kcal_mol": 1.3872343663213778,
+              "rmse_kcal_mol": 2.0389411950976677
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.1621822352455426,
+              "rmse_kcal_mol": 1.7174949340243755
+            }
+          }
+        },
+        {
+          "fold": 4,
+          "train_rows": 2289,
+          "test_rows": 572,
+          "test_groups": [
+            "1A22",
+            "1BJ1",
+            "1CBW",
+            "1CT0",
+            "1EFN",
+            "1F5R",
+            "1KIP",
+            "1OGA",
+            "1P6A",
+            "1PPF",
+            "1SGN",
+            "1X1X",
+            "1XGR",
+            "1Y3C",
+            "2A9K",
+            "2BNQ",
+            "2DVW",
+            "2FTL",
+            "2G2U",
+            "2GOX",
+            "2NU1",
+            "2O3B",
+            "2PCB",
+            "2VIR",
+            "2VIS",
+            "2VLR",
+            "3AAA",
+            "3BTH",
+            "3D5R",
+            "3M62",
+            "3M63",
+            "3N0P",
+            "3Q3J",
+            "3QDG",
+            "3SZK",
+            "3UII",
+            "3W2D",
+            "3WWN",
+            "4J2L",
+            "4JPK",
+            "4L3E",
+            "4LRX",
+            "4MNQ",
+            "4OZG",
+            "4YEB",
+            "5F4E"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.6082910041517189,
+              "rmse_kcal_mol": 2.553367391189911
+            },
+            "training_median": {
+              "mae_kcal_mol": 1.4587580221324796,
+              "rmse_kcal_mol": 2.352798733271679
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.3268873834911927,
+              "rmse_kcal_mol": 2.124417947230826
+            }
+          }
+        }
+      ]
+    },
+    "related_group": {
+      "grouping": "related_group",
+      "n_folds": 5,
+      "pooled_out_of_fold": {
+        "zero_change": {
+          "mae_kcal_mol": 1.3814286290634419,
+          "rmse_kcal_mol": 2.13417412701881
+        },
+        "training_median": {
+          "mae_kcal_mol": 1.2643512186284194,
+          "rmse_kcal_mol": 1.960856984370516
+        },
+        "ridge_mutation_location": {
+          "mae_kcal_mol": 1.2046874002056704,
+          "rmse_kcal_mol": 1.8223803782002308
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "train_rows": 1538,
+          "test_rows": 1323,
+          "test_groups": [
+            "1ACB_E_I"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.7983706057107853,
+              "rmse_kcal_mol": 2.6356661418112366
+            },
+            "training_median": {
+              "mae_kcal_mol": 1.6583924366135885,
+              "rmse_kcal_mol": 2.4602430894462954
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.5230007108835781,
+              "rmse_kcal_mol": 2.2670978680879705
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "train_rows": 2476,
+          "test_rows": 385,
+          "test_groups": [
+            "1AO7_ABC_DE",
+            "1B41_A_B",
+            "1KAC_A_B",
+            "1KNE_A_P",
+            "1YCS_A_B",
+            "2I26_N_L",
+            "2O3B_A_B",
+            "3UIG_A_P",
+            "3WWN_A_B",
+            "4JGH_ABC_D",
+            "4PWX_AB_CD",
+            "4YEB_A_B",
+            "5K39_A_B"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.0373819556846087,
+              "rmse_kcal_mol": 1.6795282901981865
+            },
+            "training_median": {
+              "mae_kcal_mol": 0.9281806922760717,
+              "rmse_kcal_mol": 1.506349112839256
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.0454283254753785,
+              "rmse_kcal_mol": 1.5208900312618892
+            }
+          }
+        },
+        {
+          "fold": 2,
+          "train_rows": 2476,
+          "test_rows": 385,
+          "test_groups": [
+            "1EFN_A_B",
+            "1GRN_A_B",
+            "1KBH_A_B",
+            "1KTZ_A_B",
+            "2B0Z_A_B",
+            "2DSQ_I_G",
+            "2J0T_A_D",
+            "3BT1_A_U",
+            "3RF3_A_C",
+            "3SZK_AB_C",
+            "4CVW_A_C",
+            "4E6K_AB_G",
+            "4LRX_AB_CD",
+            "5E6P_A_B",
+            "5F4E_A_B"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 0.7216701892638666,
+              "rmse_kcal_mol": 1.1926073740668142
+            },
+            "training_median": {
+              "mae_kcal_mol": 0.6906323821249675,
+              "rmse_kcal_mol": 1.0194041147615054
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 0.7103782517679534,
+              "rmse_kcal_mol": 0.9769119268854547
+            }
+          }
+        },
+        {
+          "fold": 3,
+          "train_rows": 2477,
+          "test_rows": 384,
+          "test_groups": [
+            "1B2S_A_D",
+            "1C1Y_A_B",
+            "1DAN_HL_UT",
+            "1E50_A_B",
+            "1EMV_A_B",
+            "1IAR_A_B",
+            "1OHZ_A_B",
+            "1U7F_B_AC",
+            "2B42_A_B",
+            "2GOX_A_B",
+            "3SF4_A_D",
+            "3U82_A_B",
+            "4HFK_A_BD",
+            "4J2L_A_CD",
+            "4YFD_A_B"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.2364794881924857,
+              "rmse_kcal_mol": 1.8269348084253005
+            },
+            "training_median": {
+              "mae_kcal_mol": 1.1115269533329277,
+              "rmse_kcal_mol": 1.6365924731306796
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 1.002595207949742,
+              "rmse_kcal_mol": 1.4514051128072236
+            }
+          }
+        },
+        {
+          "fold": 4,
+          "train_rows": 2477,
+          "test_rows": 384,
+          "test_groups": [
+            "1A22_A_B",
+            "1A4Y_A_B",
+            "1FFW_A_B",
+            "1JTD_A_B",
+            "1S1Q_A_B",
+            "1WQJ_I_B",
+            "2C0L_A_B",
+            "2DVW_A_B",
+            "2HLE_A_B",
+            "2HRK_A_B",
+            "3F1S_A_B",
+            "3NVN_B_A",
+            "4BFI_A_B",
+            "4JEU_A_B",
+            "4NKQ_C_AB",
+            "4Y61_A_B"
+          ],
+          "metrics": {
+            "zero_change": {
+              "mae_kcal_mol": 1.096301555010576,
+              "rmse_kcal_mol": 1.552203809747503
+            },
+            "training_median": {
+              "mae_kcal_mol": 0.9718392164892867,
+              "rmse_kcal_mol": 1.340842604123722
+            },
+            "ridge_mutation_location": {
+              "mae_kcal_mol": 0.9653609880157971,
+              "rmse_kcal_mol": 1.2857559428883147
+            }
+          }
+        }
+      ]
+    }
+  }
+}
